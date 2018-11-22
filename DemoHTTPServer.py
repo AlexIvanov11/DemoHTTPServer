@@ -160,7 +160,7 @@ class DemoHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
         if "\\" in path:
             path = path.split("\\")
             path = "/".join(path)
-        fn_hashed = hashlib.md5(fn[0].encode()).hexdigest()
+        fn_hashed = content_md5 = hashlib.md5(fn[0].encode()).hexdigest()
         folder = path + "/" + fn_hashed[:2]
         fn_hashed = folder + "/" + fn_hashed
 
@@ -201,6 +201,7 @@ class DemoHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
                 # write last line and close file
                 out.write(prev_line)
                 out.close()
+                self.send_header("Content-MD5", content_md5)
                 return True, "File '%s' was uploaded!" % fn[0]
             else:
                 out.write(prev_line)
