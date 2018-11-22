@@ -20,24 +20,24 @@ about  performed action - whether it was successful or not.
 
 # Command-line interface
 Command-line interface is supposed to be performed via curl. Suggested synthax of commands:
-1) Perform GET request
+1) Perform GET request<br>
     
-    To list a directory: 
-      curl <host>
+    To list a directory:<br> 
+      curl &lt;host&gt; <br>
       curl http://localhost:8000/c1
       
-    To download a file:
-      curl <host>/?hash=<file hash>
-      curl http://localhost:8000/?hash=635152f5c049af7bd4f87424fd59b9ab
+    To download a file:<br>
+      curl "&lt;host&gt;/?hash=&lt;file hash&gt;"<br>
+      curl http://localhost:8000/?hash=635152f5c049af7bd4f87424fd59b9ab<br>
       
-2) Perform POST request:
+2) Perform POST request:<br>
     
-    curl -X "POST" -F "file=@<file name>" <host>
-    curl -X "POST" -F "file=@example.jpg" http://localhost:8000
+    curl -X "POST" -F "file=@&lt;file_name&gt;" &lt;host"<br>
+    curl -X "POST" -F "file=@example.jpg" http://localhost:8000<br>
     
-3) Perform DELETE request:
+3) Perform DELETE request:<br>
 
-    curl -X "DELETE" <host>/?hash=<file hash>
-    curl -X "DELETE" http://localhost:8000/?hash=635152f5c049af7bd4f87424fd59b9ab
+    curl -X "DELETE" "&lt;host&gt;/?hash=&lt;file_hash&gt;"<br>
+    curl -X "DELETE" http://localhost:8000/?hash=635152f5c049af7bd4f87424fd59b9ab<br>
     
 After completing action, HTTP server will send response that will be shown in you command line.
