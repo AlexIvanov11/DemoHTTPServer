@@ -32,7 +32,7 @@ Command-line interface is supposed to be performed via curl. Suggested synthax o
       
 2) Perform POST request:<br>
     
-    curl -X "POST" -F "file=@&lt;file_name&gt;" &lt;host"<br>
+    curl -X "POST" -F "file=@&lt;file_name&gt;" &lt;host&gt;<br>
     curl -X "POST" -F "file=@example.jpg" http://localhost:8000<br>
     
 3) Perform DELETE request:<br>
